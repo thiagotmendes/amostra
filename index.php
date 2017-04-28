@@ -11,7 +11,7 @@
       </h1>
     </div>
   </section>
-  <div class="container interno">
+  <div class="container conteudo-interno">
     <div class="row">
       <!-- articles -->
       <div class="col-md-8">
@@ -39,7 +39,7 @@
         <?php endif; ?>
       </div>
       <!-- sidebar -->
-      <div class="col-md-4">
+      <div class="col-md-4 sidebar">
         <?php get_sidebar() ?>
       </div>
     </div>

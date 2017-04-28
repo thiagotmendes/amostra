@@ -9,6 +9,23 @@
       <article class="conteudo-interno">
         <div class="container">
           <?php the_content() ?>
+          <?php
+          $galeria = get_field('galeria');
+          if (!empty($galeria)) {
+            echo "<h3 class='titulo-galeria'> Conheça alguns de nossos trabalhos </h3>";
+            echo "<div class='slider-portfolio'>";
+              foreach ($galeria as $galPortfolio) {
+                ?>
+                <div class="">
+                  <a href="<?php echo $galPortfolio['url'] ?>" rel="lightbox[portfolio]">
+                    <img src="<?php echo $galPortfolio['url'] ?>" alt="<?php echo $galPortfolio['alt'] ?>" class="img-responsive">
+                  </a>
+                </div>
+                <?php
+              }
+            echo "</div>";
+          }
+          ?>
         </div>
       </article>
     <?php endwhile; ?>

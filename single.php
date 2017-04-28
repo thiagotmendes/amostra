@@ -14,10 +14,17 @@
               <?php the_post_thumbnail( 'high', array( 'class' => 'img-responsive' ) ); ?>
             </div>
             <div class="">
-              <p class="data-noticia text-right"> <?php the_time('j \d\e F \d\e Y') ?> </p>
-              <p class="text-justify">
+              <div class="row">
+                <div class="col-md-3 col-xs-6 col-sm-3">
+                  Autor: <?php the_author(); ?>
+                </div>
+                <div class="col-md-9 col-xs-6 col-sm-9">
+                  <p class="data-noticia text-right"> <?php the_time('j \d\e F \d\e Y') ?> </p>
+                </div>
+              </div>
+              <div class="text-justify">
                 <?php the_content() ?>
-              </p>
+              </div>
             </div>
           </article>
 
@@ -57,7 +64,7 @@
         <?php endif; ?>
       </div>
       <!-- sidebar -->
-      <div class="col-md-4">
+      <div class="col-md-4 sidebar">
         <?php get_sidebar() ?>
       </div>
     </div>

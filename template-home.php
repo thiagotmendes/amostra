@@ -1,7 +1,7 @@
 <?php /* template name: Home */ ?>
 <?php get_header() ?>
   <section class="banner">
-    <img src="<?php echo get_template_directory_uri() ?>/assets/images/city.jpg" alt="" class="img-responsive">
+    <?php echo do_shortcode('[rev_slider alias="home"]') ?>
   </section>
 
   <section class="sobre-empresa inner">
@@ -41,7 +41,7 @@
           $count = 0;
           while($servicosHome->have_posts()): $servicosHome->the_post();
             ?>
-            <div class="col-md-3 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="<?php echo $count ?>s">
+            <div class="col-md-3 col-sm-6 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="<?php echo $count ?>s">
               <div class="text-center">
                 <?php
                 $image = get_field('icones');
@@ -76,6 +76,41 @@
         echo $paginaClientes->post_content
          ?>
       </div>
+    </div>
+  </section>
+
+  <section class="blog inner">
+    <div class="container">
+      <h2 class="text-center titulo-clientes wow fadeInDown"> BLog </h2>
+
+      <div class="row">
+        <?php
+        $argPostHome = array(
+          'post_type' => 'post',
+          'posts_per_page' => 3
+        );
+
+        $postsHome = new wp_query($argPostHome);
+        if ($postsHome->have_posts()):
+          while($postsHome->have_posts()): $postsHome->the_post();
+          ?>
+            <div class="col-md-4">
+              <div class="img-blog">
+                <a href="<?php the_permalink() ?>">
+                  <?php the_post_thumbnail( 'high', array( 'class' => 'img-responsive' ) ); ?>
+                </a>
+              </div>
+
+              <h3> <a href="<?php the_permalink() ?>"> <?php the_title() ?> </a> </h3>
+
+              <?php the_excerpt_limit(20) ?>
+            </div>
+          <?php
+          endwhile;
+        endif;
+        ?>
+      </div>
+
     </div>
   </section>
 

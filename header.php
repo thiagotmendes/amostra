@@ -17,7 +17,7 @@
     <![endif]-->
   </head>
   <body>
-    <header>
+    <header id="toposite">
       <nav class="navbar navbar-site" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -34,6 +34,18 @@
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav menu-social navbar-right">
+              <li>
+                <a href="https://www.facebook.com/AmostraComunicacao/" target="_blank">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/AmostraBH/" target="_blank">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
             <?php
               $args = array(
                 'theme_location' => 'menu_topo',
